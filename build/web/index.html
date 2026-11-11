@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personal Profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 35px 15px;
+            font-family: Arial, sans-serif;
+            background: #FFF8ED;
+            color: #263238;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px rgba(8,127,140,0.12);
+        }
+
+        h1 {
+            color: #087F8C;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #78909C;
+            margin-bottom: 30px;
+        }
+
+        .avatar {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            background: #087F8C;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            color: #263238;
+        }
+
+        .icon {
+            margin-right: 7px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #D5E5E2;
+            border-radius: 9px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #087F8C;
+            box-shadow: 0 0 0 3px rgba(8,127,140,0.10);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .hobbies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 12px;
+        }
+
+        .hobbies label {
+            margin: 0;
+            font-weight: normal;
+            background: #EAF7F4;
+            padding: 10px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .hobbies input {
+            accent-color: #087F8C;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px;
+            border: none;
+            border-radius: 9px;
+            background: #087F8C;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #06636D;
+        }
+
+        .footer {
+            text-align: center;
+            color: #90A4AE;
+            font-size: 12px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px 20px;
+            }
+
+            .hobbies {
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="avatar">👤</div>
+
+    <h1>Personal Profile</h1>
+
+    <p class="subtitle">
+        Create your student profile
+    </p>
+
+    <form action="ProfileServlet" method="POST">
+
+        <label><span class="icon">👤</span>Full Name</label>
+        <input type="text" name="name"
+               placeholder="Enter your full name" required>
+
+        <label><span class="icon">🪪</span>Student ID</label>
+        <input type="text" name="studentId"
+               placeholder="Enter your student ID" required>
+
+        <label><span class="icon">🎓</span>Program</label>
+        <input type="text" name="program"
+               placeholder="Enter your program" required>
+
+        <label><span class="icon">✉️</span>Email Address</label>
+        <input type="email" name="email"
+               placeholder="example@email.com" required>
+
+        <label><span class="icon">❤️</span>Hobbies</label>
+
+        <div class="hobbies">
+
+            <label>
+                <input type="checkbox" name="hobbies"
+                       value="Reading"> 📚 Reading
+            </label>
+
+            <label>
+                <input type="checkbox" name="hobbies"
+                       value="Gaming"> 🎮 Gaming
+            </label>
+
+            <label>
+                <input type="checkbox" name="hobbies"
+                       value="Sports"> ⚽ Sports
+            </label>
+
+            <label>
+                <input type="checkbox" name="hobbies"
+                       value="Music"> 🎵 Music
+            </label>
+
+        </div>
+
+        <label><span class="icon">📝</span>Short Self-Introduction</label>
+
+        <textarea name="introduction"
+                  placeholder="Tell us about yourself..."
+                  required></textarea>
+
+        <button type="submit">
+            Submit My Profile →
+        </button>
+
+    </form>
+
+    <div class="footer">
+        Personal Profile Web Application
+    </div>
+
+</div>
+
+</body>
+</html>
